@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 832ac89eea229964d8eafedfca18e8cc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5316623460224530568
+    second: fence-removebg-preview_0
+  - first:
+      213: -365621689963065086
+    second: fence-removebg-preview_1
+  - first:
+      213: 3781306368770406830
+    second: fence-removebg-preview_2
+  - first:
+      213: -6371099672323490257
+    second: fence-removebg-preview_3
+  - first:
+      213: 9139644861909286987
+    second: fence-removebg-preview_4
+  - first:
+      213: -3997975642483956027
+    second: fence-removebg-preview_5
+  - first:
+      213: -8634504672230622738
+    second: fence-removebg-preview_6
+  - first:
+      213: 7688702033319551027
+    second: fence-removebg-preview_7
+  - first:
+      213: -4962216979371610940
+    second: fence-removebg-preview_8
+  - first:
+      213: -1053241711780941445
+    second: fence-removebg-preview_9
+  - first:
+      213: -2815045469552249424
+    second: fence-removebg-preview_10
+  - first:
+      213: -8336438350491808233
+    second: fence-removebg-preview_11
+  - first:
+      213: -2420383610430587238
+    second: fence-removebg-preview_12
+  - first:
+      213: 5320245030168501654
+    second: fence-removebg-preview_13
+  - first:
+      213: 7026090688083763643
+    second: fence-removebg-preview_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fence-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 116
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888f03f4ed078c940800000000000000
+      internalID: 5316623460224530568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 319
+        width: 169
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201d297920d0deaf0800000000000000
+      internalID: -365621689963065086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 308
+        width: 210
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea97b71bb16e97430800000000000000
+      internalID: 3781306368770406830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 114
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2efc828a9e4597a0800000000000000
+      internalID: -6371099672323490257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 176
+        width: 180
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40c357f39a86de70800000000000000
+      internalID: 9139644861909286987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 176
+        width: 194
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c66419d5565488c0800000000000000
+      internalID: -3997975642483956027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 136
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee93e388fb31c2880800000000000000
+      internalID: -8634504672230622738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 158
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 330e5d743c1c3ba60800000000000000
+      internalID: 7688702033319551027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 166
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cca42eb2f9a22bb0800000000000000
+      internalID: -4962216979371610940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 124
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b713ca25e322261f0800000000000000
+      internalID: -1053241711780941445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 122
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b5f3c86f03fee8d0800000000000000
+      internalID: -2815045469552249424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 122
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e0ef21d750f4c80800000000000000
+      internalID: -8336438350491808233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 121
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e7b181ee1196ed0800000000000000
+      internalID: -2420383610430587238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 125
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d1b35caae45d940800000000000000
+      internalID: 5320245030168501654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 0
+        width: 174
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1a9e64140b18160800000000000000
+      internalID: 7026090688083763643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fence-removebg-preview_0: 5316623460224530568
+      fence-removebg-preview_1: -365621689963065086
+      fence-removebg-preview_10: -2815045469552249424
+      fence-removebg-preview_11: -8336438350491808233
+      fence-removebg-preview_12: -2420383610430587238
+      fence-removebg-preview_13: 5320245030168501654
+      fence-removebg-preview_14: 7026090688083763643
+      fence-removebg-preview_2: 3781306368770406830
+      fence-removebg-preview_3: -6371099672323490257
+      fence-removebg-preview_4: 9139644861909286987
+      fence-removebg-preview_5: -3997975642483956027
+      fence-removebg-preview_6: -8634504672230622738
+      fence-removebg-preview_7: 7688702033319551027
+      fence-removebg-preview_8: -4962216979371610940
+      fence-removebg-preview_9: -1053241711780941445
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
