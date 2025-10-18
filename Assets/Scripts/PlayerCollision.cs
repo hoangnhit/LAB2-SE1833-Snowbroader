@@ -51,7 +51,7 @@ public class PlayerCollision : MonoBehaviour
         spriteRenderer.enabled = false;
         playerController.ReduceSpeed();
         gameObject.layer = 7;
-        yield return new WaitForSeconds(1.5f); //"Pause for 1.5s" at the moment
+        yield return new WaitForSeconds(3.0f); //"Pause for 1.5s" at the moment
         playerController.EnableControl();
         spriteRenderer.enabled = true;
         gameObject.layer = 6;
