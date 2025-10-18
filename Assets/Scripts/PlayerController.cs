@@ -32,6 +32,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float groundCheckRadius = 0.5f;
     [SerializeField] float reducedSpeed = 5f;
 
+    //The health of player when got hitted 
+    [SerializeField] int health = 100;
+
+
+    private GameManager gameManager;
     bool canMove = true;
     float currentSpeed; // Track current speed dynamically
     bool isSpeedReduced = false; // Add this at the top with other member variables
@@ -40,12 +45,15 @@ public class PlayerController : MonoBehaviour
     float previousRotation = 0f;
     float totalRotation = 0f; // Tổng số độ đã xoay
 
+    private void Awake()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+    }
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();  // Lấy AudioSource trên Player
         surfaceEffector2D = FindObjectOfType<SurfaceEffector2D>();
-
         if (groundCheck == null)
         {
             groundCheck = transform.Find("GroundCheck");
@@ -78,6 +86,10 @@ public class PlayerController : MonoBehaviour
         canMove = false;
     }
 
+    public void EnableControl()
+    {
+        canMove = true;
+    }
     void RotatePlayer()
     {
         float currentTorque = Input.GetKey(KeyCode.LeftShift) ? boostedTorqueAmount : torqueAmount;
@@ -228,5 +240,21 @@ public class PlayerController : MonoBehaviour
         surfaceEffector2D.speed = currentSpeed;
     }
 
+   public void TakeDamage(Collider2D collider)
+    {
+        if (collider.CompareTag("Fence"))
+        {
+            health -= 15;
+
+        }
+        if (collider.CompareTag("Rock"))
+        {
+            health -= 50;
+        }
+        if(health < 0) 
+        {
+            gameManager.HandleGameOver();
+        }
+    }
 
 }

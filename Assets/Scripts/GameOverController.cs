@@ -8,6 +8,7 @@ public class GameOverController : MonoBehaviour
     private GameManager gameManager;
     [SerializeField] GameObject gameOverText;
     [SerializeField] GameObject gameWinText;
+
     private void Awake()
     {
         gameManager = FindAnyObjectByType<GameManager>();
@@ -41,5 +42,12 @@ public class GameOverController : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void showGameOver()
+    {
+        gameWinText.SetActive(false);  // Hide "You Win"
+        gameOverText.SetActive(true);  // Show "Game Over"
+        GameManager.score = 0;
     }
 }

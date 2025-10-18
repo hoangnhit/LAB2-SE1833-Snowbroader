@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,5 +41,10 @@ public class GameManager : MonoBehaviour
     void UpdateSpeed()
     {
         speedText.text = "Speed: " + playerController.GetSpeed().ToString("F1"); // Display speed with 1 decimal place
+    }
+
+    public void HandleGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }
