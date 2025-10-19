@@ -146,16 +146,3 @@ Developed by **FPT University Students — Team Snow Boarder**
 © 2025 — Licensed under the **MIT License**
 
 ---
-
-## 🇻🇳 Ghi chú nhanh cho dev Việt
-- Hack nằm trong `PlayerController.cs → HandleCheatCombos()`  
-- Reset hack trong `GameOverController.cs` bằng:  
-  ```csharp
-  PlayerCollision.ResetInvincible();
-  PlayerCollision.ResetFenceHitCount();
-
-
-  ---------------------------
-
-
-**UI Format:**  
