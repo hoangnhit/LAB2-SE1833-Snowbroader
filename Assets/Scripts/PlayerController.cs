@@ -1,64 +1,75 @@
 ﻿using System;
 using UnityEngine;
 
-/// <summary>
-/// Player Controller
-/// </summary>
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb2d;
     SurfaceEffector2D surfaceEffector2D;
-    AudioSource audioSource;  // AudioSource để phát âm thanh
+    AudioSource audioSource;
 
-    // Âm thanh khi nhảy và khi lộn vòng
+    [Header("Audio Settings")]
     [SerializeField] AudioClip jumpSound;
-    [SerializeField] AudioClip flipSound;  // Âm thanh khi lộn vòng
+    [SerializeField] AudioClip flipSound;
+    [SerializeField] AudioClip speedUpSound;
+    [SerializeField] AudioClip slowDownSound;
 
-    // The amount of torque applied to the player for rotation
+    [Header("Speed Settings")]
+    [SerializeField] float minSpeed = 1f;
+    [SerializeField] float maxSpeed = 35f;
+    [SerializeField] float accelerationRate = 15f;
+    [SerializeField] float decelerationRate = 10f;
+    [SerializeField] float brakeRate = 25f;
     [SerializeField] float torqueAmount = 10f;
-    [SerializeField] float boostedTorqueAmount = 20f; // Tốc độ xoay khi tăng tốc
-
-    // The speed when the player is boosted
-    [SerializeField] float boostSpeed = 35f;
-    // The normal movement speed of the player
-    [SerializeField] float baseSpeed = 20f;
-    // The force applied when the player jumps
+    [SerializeField] float boostedTorqueAmount = 20f;
     [SerializeField] float jumpForce = 10f;
-    // Reference to the GroundCheck transform, used to detect if the player is on the ground
+
+    [Header("Ground Check Settings")]
     [SerializeField] Transform groundCheck;
-    // The layer mask that defines what is considered ground
     [SerializeField] LayerMask groundLayer;
-    // The radius of the ground check area, determining how far to check for ground contact
     [SerializeField] float groundCheckRadius = 0.5f;
-    [SerializeField] float reducedSpeed = 5f;
+
+    [Header("Effects")]
+    [SerializeField] ParticleSystem dustParticles;
+
+    // ===== Magnet hack settings =====
+    [Header("🧲 Magnet (Cheat) Settings")]
+    [SerializeField] float magnetRadius = 25f;   // Bán kính hút vàng (tăng để hút xa)
+    [SerializeField] float magnetSpeed = 80f;    // Tốc độ lực hút (tăng để hút mạnh)
+    bool magnetActive = false;                   // Trạng thái nam châm
+    [SerializeField] ParticleSystem magnetEffect; // Optional: particle placed as child "MagnetEffect"
 
     bool canMove = true;
-    float currentSpeed; // Track current speed dynamically
-    bool isSpeedReduced = false; // Add this at the top with other member variables
+    float currentSpeed;
+    bool isSpeedReduced = false;
 
-    // Biến để kiểm tra lộn vòng
+    // Lộn vòng
     float previousRotation = 0f;
-    float totalRotation = 0f; // Tổng số độ đã xoay
+    float totalRotation = 0f;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();  // Lấy AudioSource trên Player
+        audioSource = GetComponent<AudioSource>();
         surfaceEffector2D = FindObjectOfType<SurfaceEffector2D>();
+
+        // magnetEffect có thể được kéo vào inspector; fallback tìm child nếu không set
+        if (magnetEffect == null)
+            magnetEffect = transform.Find("MagnetEffect")?.GetComponent<ParticleSystem>();
 
         if (groundCheck == null)
         {
             groundCheck = transform.Find("GroundCheck");
+            if (groundCheck == null)
+            {
+                Debug.LogError("GroundCheck object not found!");
+                enabled = false;
+                return;
+            }
         }
 
-        if (groundCheck == null)
-        {
-            Debug.LogError("GroundCheck object not found! Make sure it exists in the hierarchy.");
-            enabled = false;
-        }
-
-        currentSpeed = baseSpeed; // Set initial speed
-        surfaceEffector2D.speed = currentSpeed;
+        currentSpeed = minSpeed;
+        if (surfaceEffector2D != null)
+            surfaceEffector2D.speed = currentSpeed;
     }
 
     void Update()
@@ -66,30 +77,26 @@ public class PlayerController : MonoBehaviour
         if (canMove)
         {
             RotatePlayer();
-            RespondToBoost();
+            ControlSpeedSmoothly();
             Jump();
-            CheckFlip(); // Kiểm tra lộn vòng
-            AdjustSpeedBasedOnSlope(); // NEW: Dynamically adjust speed
+            CheckFlip();
+            HandleDustEffect();
         }
+
+        HandleCheatCombos(); // tổ hợp phím hack
+        HandleMagnet();      // hút vàng khi bật
     }
 
-    public void DisableControls()
-    {
-        canMove = false;
-    }
+    public void DisableControls() => canMove = false;
 
     void RotatePlayer()
     {
-        float currentTorque = Input.GetKey(KeyCode.LeftShift) ? boostedTorqueAmount : torqueAmount;
+        float torque = Input.GetKey(KeyCode.LeftShift) ? boostedTorqueAmount : torqueAmount;
 
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
-            rb2d.AddTorque(currentTorque);
-        }
+            rb2d.AddTorque(torque);
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            rb2d.AddTorque(-currentTorque);
-        }
+            rb2d.AddTorque(-torque);
     }
 
     void Jump()
@@ -97,16 +104,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, jumpForce);
-
-            // Phát âm thanh khi nhảy
-            if (jumpSound != null && audioSource != null)
-            {
+            if (jumpSound && audioSource)
                 audioSource.PlayOneShot(jumpSound);
-            }
         }
     }
 
-    // Hàm kiểm tra và phát âm thanh khi lộn vòng
     void CheckFlip()
     {
         float currentRotation = transform.eulerAngles.z;
@@ -114,119 +116,153 @@ public class PlayerController : MonoBehaviour
         totalRotation += deltaRotation;
         previousRotation = currentRotation;
 
-        // Kiểm tra nếu đã lộn đủ 360 độ
         if (Mathf.Abs(totalRotation) >= 360f)
         {
-            totalRotation = 0f; // Reset lại tổng số độ đã xoay
-
-            // Phát âm thanh khi lộn vòng
-            if (flipSound != null && audioSource != null)
-            {
+            totalRotation = 0f;
+            if (flipSound && audioSource)
                 audioSource.PlayOneShot(flipSound);
-            }
         }
     }
 
-    /// <summary>
-    /// Check if the player is grounded
-    /// </summary>
-    /// <returns></returns>
     bool IsGrounded()
     {
         if (groundCheck == null) return false;
-
         bool grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-
         Debug.DrawRay(groundCheck.position, Vector2.down * groundCheckRadius, grounded ? Color.green : Color.red);
-        Debug.Log($"IsGrounded: {grounded}");
-
         return grounded;
     }
 
-    /// <summary>
-    /// Respond to boost
-    /// </summary>
-    void RespondToBoost()
+    // 🌟 Tăng/Giảm tốc độ mượt
+    void ControlSpeedSmoothly()
     {
-        if (isSpeedReduced) return;
-        if (surfaceEffector2D == null) return;
-        float boostFactor = 1.5f;
+        if (isSpeedReduced || surfaceEffector2D == null) return;
 
-        if (Input.GetKey(KeyCode.UpArrow) && IsGrounded())
+        float targetSpeed = currentSpeed;
+
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            // currentSpeed = boostSpeed;
-            currentSpeed *= boostFactor; // Multiply current speed
-            Debug.Log("Boost applied. New speed: " + currentSpeed);
-            surfaceEffector2D.speed = currentSpeed;
+            targetSpeed = Mathf.Min(currentSpeed + accelerationRate * Time.deltaTime, maxSpeed);
+            if (speedUpSound && audioSource && !audioSource.isPlaying)
+                audioSource.PlayOneShot(speedUpSound);
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            targetSpeed = Mathf.Max(currentSpeed - brakeRate * Time.deltaTime, minSpeed);
+            if (slowDownSound && audioSource && !audioSource.isPlaying)
+                audioSource.PlayOneShot(slowDownSound);
         }
         else
         {
-            currentSpeed = baseSpeed;
-            surfaceEffector2D.speed = currentSpeed;
+            targetSpeed = Mathf.Max(currentSpeed - decelerationRate * Time.deltaTime, minSpeed);
         }
+
+        currentSpeed = targetSpeed;
+        surfaceEffector2D.speed = currentSpeed;
     }
 
     public void ReduceSpeed()
     {
         isSpeedReduced = true;
-        currentSpeed = reducedSpeed;
+        currentSpeed = minSpeed;
         if (surfaceEffector2D != null)
-        {
             surfaceEffector2D.speed = currentSpeed;
-        }
-        Debug.Log("Speed reduced to: " + currentSpeed);
-        Invoke("ResetSpeed", 3f);
+
+        Invoke(nameof(ResetSpeed), 3f);
     }
 
-    void ResetSpeed()
+    void ResetSpeed() => isSpeedReduced = false;
+    public float GetSpeed() => currentSpeed;
+
+    void HandleDustEffect()
     {
-        isSpeedReduced = false; // Allows speed changes again
-        currentSpeed = baseSpeed;
+        if (dustParticles == null) return;
 
-        if (surfaceEffector2D != null)
+        if (currentSpeed > (maxSpeed * 0.7f))
         {
-            surfaceEffector2D.speed = currentSpeed;
+            if (!dustParticles.isPlaying) dustParticles.Play();
         }
-
-        Debug.Log("Speed reset to: " + currentSpeed);
+        else
+        {
+            if (dustParticles.isPlaying) dustParticles.Stop();
+        }
     }
-    public float GetSpeed()
+
+    // ===== Magnet: hút vật lý (ưu tiên Rigidbody2D coin) =====
+    void HandleMagnet()
     {
-        return currentSpeed;
+        if (!magnetActive) return;
+
+        // Tìm coin theo tag "Coin"
+        GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
+        if (coins == null || coins.Length == 0) return;
+
+        Vector2 myPos = transform.position;
+        float r2 = magnetRadius * magnetRadius;
+
+        for (int i = 0; i < coins.Length; i++)
+        {
+            GameObject c = coins[i];
+            if (c == null) continue;
+
+            Vector2 diff = (Vector2)c.transform.position - myPos;
+            float distSqr = diff.sqrMagnitude;
+
+            if (distSqr <= r2)
+            {
+                float distance = Mathf.Sqrt(distSqr);
+                // pullStrength tăng khi gần hơn
+                float pullStrength = Mathf.Lerp(magnetSpeed * 0.3f, magnetSpeed, 1f - (distance / magnetRadius));
+
+                // debug đường hút (tạm thời, sẽ hiển thị trên Scene view)
+                Debug.DrawLine(c.transform.position, myPos, Color.yellow, 0.02f);
+
+                Rigidbody2D coinRb = c.GetComponent<Rigidbody2D>();
+                if (coinRb != null)
+                {
+                    // dùng lực để kéo (mượt và tương thích physics)
+                    Vector2 dir = (myPos - (Vector2)c.transform.position).normalized;
+                    // scale lực với pullStrength; multiply để có cảm giác mạnh
+                    coinRb.AddForce(dir * pullStrength * 5f * Time.deltaTime, ForceMode2D.Force);
+                    // (tuỳ coin, bạn có thể muốn giảm gravity khi hút)
+                }
+                else
+                {
+                    // fallback: dịch tọa độ (không khuyến khích nếu coin có physics)
+                    c.transform.position = Vector2.MoveTowards(c.transform.position, myPos, pullStrength * Time.deltaTime);
+                }
+            }
+        }
     }
 
-
-    void AdjustSpeedBasedOnSlope()
+    // 🧩 Hack phím
+    private void HandleCheatCombos()
     {
-        if (surfaceEffector2D == null || isSpeedReduced) return;
-
-        // Get the player's movement direction
-        float yVelocity = rb2d.linearVelocity.y;
-
-        float speedFactor = 1.0f;
-
-        if (yVelocity < -0.5f) // Moving downhill
+        // Hack điểm: H + G
+        if (Input.GetKey(KeyCode.H) && Input.GetKeyDown(KeyCode.G))
         {
-            speedFactor = 1.5f; // Increase speed
-        }
-        else if (yVelocity > 0.5f) // Moving uphill
-        {
-            speedFactor = 0.7f; // Reduce speed
+            var gm = FindAnyObjectByType<GameManager>();
+            gm?.AddScore(500);
+            Debug.Log("💰 Hack điểm (+500)!");
         }
 
-        // Update speed based on terrain
-        currentSpeed = baseSpeed * speedFactor;
-
-        // If boosting, multiply the adjusted speed
-        if (Input.GetKey(KeyCode.UpArrow) && IsGrounded())
+        // Bất tử: K + L
+        if (Input.GetKey(KeyCode.K) && Input.GetKeyDown(KeyCode.L))
         {
-            float boostFactor = 1.5f;
-            currentSpeed *= boostFactor;
-            Debug.Log("Boosted while on slope! New speed: " + currentSpeed);
+            PlayerCollision.ToggleInvincible();
+            Debug.Log("🛡️ Bật/tắt bất tử: " + PlayerCollision.IsInvincible());
         }
 
-        surfaceEffector2D.speed = currentSpeed;
+        // Nam châm: N + M
+        if (Input.GetKey(KeyCode.N) && Input.GetKeyDown(KeyCode.M))
+        {
+            magnetActive = !magnetActive;
+            Debug.Log("🧲 Magnet = " + magnetActive);
+
+            if (magnetEffect != null)
+            {
+                if (magnetActive) magnetEffect.Play();
+                else magnetEffect.Stop();
+            }
+        }
     }
-
-
 }

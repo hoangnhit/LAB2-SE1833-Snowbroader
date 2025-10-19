@@ -1,45 +1,59 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
+    [Header("UI Text References")]
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI highestScoreText;
-    private GameManager gameManager;
-    [SerializeField] GameObject gameOverText;
-    [SerializeField] GameObject gameWinText;
-    private void Awake()
-    {
-        gameManager = FindAnyObjectByType<GameManager>();
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [Header("UI Panels")]
+    [SerializeField] private GameObject gameOverText;
+    [SerializeField] private GameObject gameWinText;
+
     void Start()
     {
-        scoreText.text = "SCORE: " + GameManager.score.ToString();
-        highestScoreText.text = "HIGHEST SCORE: " + GameManager.highestScore.ToString();
+        // 🧾 Hiển thị điểm
+        if (scoreText != null)
+            scoreText.text = "SCORE: " + GameManager.score.ToString();
 
-        int flag = PlayerPrefs.GetInt("Flag", 0); // Check flag status
+        if (highestScoreText != null)
+            highestScoreText.text = "HIGHEST SCORE: " + GameManager.highestScore.ToString();
 
+        // ⚙️ Kiểm tra thắng / thua
         if (GameManager.Flag == 1)
         {
-            gameWinText.SetActive(true);   // Show "You Win"
-            gameOverText.SetActive(false); // Hide "Game Over"
-            GameManager.score = 0;
-
-            // Reset the flag AFTER showing "You Win"
-            GameManager.Flag = 0;
+            gameWinText.SetActive(true);
+            gameOverText.SetActive(false);
+            GameManager.Flag = 0; // reset lại
         }
         else
         {
-            gameWinText.SetActive(false);  // Hide "You Win"
-            gameOverText.SetActive(true);  // Show "Game Over"
-            GameManager.score = 0;
+            gameWinText.SetActive(false);
+            gameOverText.SetActive(true);
         }
+
+        // Reset điểm để sẵn sàng cho ván sau
+        GameManager.score = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    // 🔁 Nút Restart Game
+    public void RestartGame()
     {
+        // 🔄 Reset trạng thái trước khi restart
+        PlayerCollision.ResetFenceHitCount();
+        PlayerCollision.ResetInvincible();
+        GameManager.score = 0;
 
+        SceneManager.LoadScene("Level1");
+    }
+
+
+
+    // 🚪 Nút Quit Game
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

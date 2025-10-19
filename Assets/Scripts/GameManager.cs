@@ -1,44 +1,88 @@
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static int score;
     public static int highestScore = 0;
+
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI speedText; // Add a UI text for speed
+    [SerializeField] private TextMeshProUGUI speedText;
 
-    private PlayerController playerController; // Reference to PlayerController
+    private PlayerController playerController;
+    public static int Flag = 0;  // 0 = thua, 1 = thắng
 
-    public static int Flag = 0;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerController = FindAnyObjectByType<PlayerController>(); // Find the PlayerController in the scene
+        // 🔄 Reset trạng thái
+        PlayerCollision.ResetFenceHitCount();
+        PlayerCollision.ResetInvincible();
+
+        // 🔁 Load Highest Score từ PlayerPrefs (nếu có)
+        highestScore = PlayerPrefs.GetInt("HighestScore", 0);
+
+        playerController = FindAnyObjectByType<PlayerController>();
         UpdateScore();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (playerController != null)
-        {
-            UpdateSpeed(); // Update speed UI every frame
-        }
+            UpdateSpeed();
     }
+
+    // 🪙 Cộng điểm
     public void AddScore(int points)
     {
         score += points;
         UpdateScore();
     }
+
+    // 🧾 Cập nhật điểm UI (hiện dạng: Score: hiện tại / cao nhất)
     public void UpdateScore()
     {
-        scoreText.text = "Score: " + score.ToString();
         highestScore = Mathf.Max(score, highestScore);
+
+        if (scoreText != null)
+            scoreText.text = $"Score: {score} / {highestScore}";
+
+        // 💾 Lưu highestScore vào PlayerPrefs
+        PlayerPrefs.SetInt("HighestScore", highestScore);
+        PlayerPrefs.Save();
     }
+
+    // 🚀 Cập nhật tốc độ hiển thị UI
     void UpdateSpeed()
     {
-        speedText.text = "Speed: " + playerController.GetSpeed().ToString("F1"); // Display speed with 1 decimal place
+        if (speedText != null && playerController != null)
+            speedText.text = "Speed: " + playerController.GetSpeed().ToString("F1");
     }
-}
+
+    // 💀 GAME OVER (chặn nếu hack bất tử)
+    public void GameOver()
+    {
+        if (PlayerCollision.IsInvincible())
+        {
+            Debug.Log("🛡️ Invincible active — GameOver canceled");
+            return;
+        }
+
+        Debug.Log("💀 GAME OVER!");
+        Time.timeScale = 1f;
+
+        PlayerCollision.ResetFenceHitCount();
+        PlayerCollision.ResetInvincible();
+
+        SceneManager.LoadScene("GameOver");
+    }
+
+    // 🏆 GAME WIN
+    public void GameWin()
+    {
+        Debug.Log("🏆 YOU WIN!");
+        Time.timeScale = 1f;
+        Flag = 1;
+
+        PlayerCollision.ResetFenceHitCount();
+} }
