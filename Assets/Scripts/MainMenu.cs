@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -12,8 +12,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level2");
     }
+
     public void QuitGame()
     {
+        Debug.Log("Quit Game"); // Để kiểm tra trong Editor
         Application.Quit();
     }
 }
