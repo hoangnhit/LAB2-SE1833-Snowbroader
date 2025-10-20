@@ -3,32 +3,52 @@
   "WorkspaceRootPath": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\playercollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\gameovercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameovercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\crushdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\crushdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\snowtrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\snowtrail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\playerrotationbonus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerrotationbonus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\playercollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\gameovercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gameovercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\finishline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\finishline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scenes\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scenes\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scenes\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scenes\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|d:\\lab2\\lab2-se1833-snowbroader\\assets\\scripts\\crushdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FF8DA1-E86B-3944-831C-EF07227B8486}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\crushdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,89 +58,154 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CrushDetector.cs",
-              "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\CrushDetector.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CrushDetector.cs",
-              "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\CrushDetector.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CrushDetector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AudioManager.cs",
+              "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\AudioManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AudioManager.cs",
+              "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\AudioManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AudioManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T09:15:25.192Z",
+              "WhenOpened": "2025-10-19T14:45:57.577Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MainMenu.cs",
+              "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\MainMenu.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MainMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T13:48:52.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Function.cs",
+              "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scenes\\Function.cs",
+              "RelativeDocumentMoniker": "Assets\\Scenes\\Function.cs",
+              "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scenes\\Function.cs",
+              "RelativeToolTip": "Assets\\Scenes\\Function.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T13:34:40.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SnowTrail.cs",
+              "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\SnowTrail.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SnowTrail.cs",
+              "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\SnowTrail.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SnowTrail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T13:34:06.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FinishLine.cs",
+              "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\FinishLine.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FinishLine.cs",
+              "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\FinishLine.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FinishLine.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAqwEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T11:56:08.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PlayerRotationBonus.cs",
               "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\PlayerRotationBonus.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerRotationBonus.cs",
               "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\PlayerRotationBonus.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerRotationBonus.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAswCUAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAqwCIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T08:06:10.252Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAowCwAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAA1wFQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T08:05:41.661Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "GameOverController.cs",
               "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\GameOverController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameOverController.cs",
               "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\GameOverController.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameOverController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAiwDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T08:05:40.271Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAqwMMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAPQAAAAAAAAAAAAQwAwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T08:03:54.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "PlayerCollision.cs",
               "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\PlayerCollision.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerCollision.cs",
               "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\PlayerCollision.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerCollision.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAADYAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T08:02:54.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
+              "Title": "CrushDetector.cs",
+              "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\CrushDetector.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CrushDetector.cs",
+              "ToolTip": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scripts\\CrushDetector.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CrushDetector.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAwwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T09:15:25.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "PauseMenu.cs",
               "DocumentMoniker": "D:\\LAB2\\LAB2-SE1833-Snowbroader\\Assets\\Scenes\\PauseMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scenes\\PauseMenu.cs",

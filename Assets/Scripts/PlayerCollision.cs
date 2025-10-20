@@ -21,13 +21,14 @@ public class PlayerCollision : MonoBehaviour
     private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
     private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(Scene s, LoadSceneMode m)
     {
-        Debug.Log($"[Scene] Loaded {scene.name}. Invincible = {invincible}, fenceHitCount = {fenceHitCount}");
+        Debug.Log($"[Scene] Loaded {s.name}. Invincible={invincible}, fenceHitCount={fenceHitCount}");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Bất tử: chỉ cho nhặt coin, bỏ qua còn lại
         if (invincible)
         {
             if (other.CompareTag("Coin"))
@@ -35,11 +36,10 @@ public class PlayerCollision : MonoBehaviour
                 Destroy(other.gameObject);
                 gameManager.AddScore(10);
             }
-            else
-                Debug.Log($"[Invincible] Ignored {other.tag}");
             return;
         }
 
+        // Coin
         if (other.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
@@ -47,6 +47,7 @@ public class PlayerCollision : MonoBehaviour
             return;
         }
 
+        // Fence
         if (other.CompareTag("Fence"))
         {
             if (Time.time - lastHitTime < hitCooldown) return;
@@ -61,42 +62,27 @@ public class PlayerCollision : MonoBehaviour
                 return;
             }
 
-            // Nếu đang úp mặt xuống đất → không chết
+            // Nếu đang úp mặt xuống đất thì không chết, chỉ coi như va lần 1
             if (transform.up.y < 0f)
             {
-                Debug.Log("🤸 Player upside-down → ignore GameOver");
+                Debug.Log("🤸 Upside-down → ignore GameOver, keep as 1 hit");
                 playerController.ReduceSpeed();
                 fenceHitCount = 1;
                 return;
             }
 
-            // Nếu không bất tử & không úp đầu → Game Over
-            Debug.Log("💀 Game Over triggered by fence hit");
-            playerController.DisableControls();
-            gameManager.GameOver();
-        }
-
-        if (other.CompareTag("DeathZone") || other.CompareTag("Kill"))
-        {
-            if (invincible)
-            {
-                Debug.Log($"[Invincible] Ignored {other.tag}");
-                return;
-            }
-
-            Debug.Log($"☠️ Collided with {other.tag}");
+            // Chết thật
             playerController.DisableControls();
             gameManager.GameOver();
         }
     }
 
-    // ⚙️ Cheats & Reset
+    // Cheats & reset
     public static void ToggleInvincible()
     {
         invincible = !invincible;
         Debug.Log("🛡️ Invincible = " + invincible);
     }
-
     public static bool IsInvincible() => invincible;
 
     public static void ResetInvincible()

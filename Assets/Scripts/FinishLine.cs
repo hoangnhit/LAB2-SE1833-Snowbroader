@@ -31,6 +31,24 @@ public class FinishLine : MonoBehaviour
             Invoke("ReloadScene", loadDelay);
         }
     }
+    // hàm mới 
+    void HandleFinish()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "Level1")
+        {
+            // Người chơi hoàn thành level 1 → qua Level2
+            GameManager.Flag = 0; // vẫn giữ = 0 để đánh dấu chưa Win
+            SceneManager.LoadScene("Level2");
+        }
+        else if (currentScene == "Level2")
+        {
+            // Người chơi hoàn thành Level2 → thắng
+            GameManager.Flag = 1;
+            SceneManager.LoadScene("GameOver");
+        }
+    }
 
     void ReloadScene()
     {
