@@ -1,5 +1,7 @@
 # 🏂 Snow Boarder
 
+***VIDEO RECORD: https://drive.google.com/drive/folders/1O3HNJMpJjdQJQLgfqiZrorCY6s5fUQTl?usp=sharing 
+
 > **A 2D snowboarding arcade game built with Unity**
 
 ## 👥 Team Members
